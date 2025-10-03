@@ -1,55 +1,64 @@
-# 🌍 Air Quality Monitoring System with ESP8266
+ # 🌍 Air Quality Monitoring System (ESP8266 + MQ135 + DHT22)
 
-A smart IoT-based **Air Quality Monitoring System** built using the **ESP8266 Wi-Fi module**.  
-This project continuously monitors air quality using gas sensors and uploads real-time data to the cloud, making it accessible from **anywhere, anytime**.
+An **IoT-based Smart Air Quality Monitoring System** built using the **ESP8266 Wi-Fi module**,  
+**MQ135 gas sensor**, and **DHT22 temperature & humidity sensor**.  
+
+This system continuously measures **air quality, temperature, and humidity**, and uploads real-time data to the **cloud**, making it accessible **anytime, anywhere** through a web dashboard or mobile device.  
 
 ---
 
 ## ✨ Features
 
-- 📡 **Real-time Air Quality Monitoring** using gas/air quality sensors  
-- ☁️ **Cloud Integration**: View live data remotely from any device  
-- 📊 **Data Visualization**: Graphs and dashboards for trends and analysis  
-- ⚡ **ESP8266 Wi-Fi Connectivity**: No need for external hardware for networking  
-- 🔔 **Threshold-based Alerts**: Detects poor air quality and alerts users  
-- 🔌 **Low-Cost, DIY-Friendly**: Easy to build with commonly available components  
+- 📡 **Real-time monitoring** of air quality, temperature, and humidity  
+- ☁️ **Cloud Integration**: Access data remotely from any device  
+- 📊 **Graphical Dashboard**: Visualize trends with charts & logs  
+- 🌡️ **DHT22 Sensor**: Accurate temperature & humidity readings  
+- 🛡️ **MQ135 Gas Sensor**: Detects harmful gases & pollution levels  
+- ⚡ **Wi-Fi Connectivity** with ESP8266 — no extra networking hardware needed  
+- 🔔 **Threshold-based Alerts** (e.g., Poor Air Quality notifications)  
+- 🔌 **DIY Friendly & Low Cost**  
 
 ---
 
 ## 🧰 Hardware Requirements
 
-| Component | Description |
-|-----------|-------------|
-| **ESP8266 board** | NodeMCU / Wemos D1 mini |
-| **Gas sensor** | MQ-series sensor (e.g. MQ-135 for CO₂, NH₃, benzene, etc.) |
-| **Jumper wires** | For connections |
-| **Power source** | Micro USB or 5V regulated supply |
-| *(Optional)* Additional sensors | DHT22 (Temperature & Humidity), BMP280 (Pressure) |
+| Component       | Description                                                                 |
+|-----------------|-----------------------------------------------------------------------------|
+| **ESP8266**     | NodeMCU / Wemos D1 Mini (Wi-Fi-enabled microcontroller)                     |
+| **MQ135 Sensor**| Gas sensor for detecting air pollutants (NH₃, NOₓ, CO₂, benzene, etc.)      |
+| **DHT22 Sensor**| Digital sensor for temperature & humidity                                   |
+| **Jumper Wires**| For connections                                                            |
+| **Power Supply**| Micro USB cable or 5V regulated adapter                                     |
+| *(Optional)*    | Breadboard / Enclosure for housing the system                              |
 
 ---
 
 ## ⚙️ System Architecture
 
-1. Sensors collect air quality data.  
-2. ESP8266 reads values and connects to Wi-Fi.  
-3. Data is uploaded to a cloud platform (ThingSpeak, Firebase, Blynk, or similar).  
-4. Users can monitor air quality remotely via dashboards, mobile apps, or web interfaces.  
+
+1. Sensors collect **air quality, temperature, and humidity data**.  
+2. ESP8266 processes values and connects to Wi-Fi.  
+3. Data is **uploaded to the cloud** (ThingSpeak / Firebase / Blynk).  
+4. Users access readings via **cloud dashboard, PC, or mobile device**.  
 
 ---
 
 ## 📝 Code Details
 
-- Written in **Arduino IDE** for ESP8266 boards.  
-- Reads gas sensor values via `analogRead()`.  
-- Connects to Wi-Fi using ESP8266 libraries.  
-- Uploads sensor readings periodically to the cloud.  
-- Cloud dashboards display real-time and historical data.  
+- **MQ135** provides analog gas concentration values.  
+- **DHT22** provides temperature (°C) and humidity (%) readings.  
+- **ESP8266** handles:
+  - Wi-Fi connectivity  
+  - Uploading data to cloud servers  
+  - Serial debugging/logging  
+
+The main sketch is `swsmaincode.ino`.
 
 ---
 
-## 🚀 How to Set Up
+## 🚀 Getting Started
 
-1. **Clone this repository**
-   ```bash
-   git clone https://github.com/DurgePratik/air-quality-monitoring.git
-   cd air-quality-monitoring
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/DurgePratik/air-quality-monitoring.git
+cd air-quality-monitoring
